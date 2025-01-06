@@ -11,15 +11,10 @@ botao.addEventListener('click', () => {
     const baseAtual = +seletorBaseAtual.value
     const baseFinal = +seletorBaseFinal.value
 
-    if (baseAtual === baseFinal) {
-        numeroFinal = numeroAtual
-    }else if (baseAtual === 10) {
-        numeroFinal = numeroAtual.toString(baseFinal)
-    } else {
-        const numeroConvertido = parseInt(numeroAtual, baseAtual)
-        numeroFinal = numeroConvertido.toString(baseFinal)
-    }
+    const numeroConvertido = parseInt(numeroAtual, baseAtual)
+    numeroFinal = numeroConvertido.toString(baseFinal)
 
+    resultado.classList.remove('invisivel')
     resultado.innerHTML = `
     ${numeroAtual}<sub>${baseAtual}</sub> = ${numeroFinal}<sub>${baseFinal}</sub>
     `
